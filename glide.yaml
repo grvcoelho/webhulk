@@ -1,2 +1,4 @@
 package: github.com/grvcoelho/caphook
-import: []
+import:
+- package: github.com/sirupsen/logrus
+  version: v1.0.3
