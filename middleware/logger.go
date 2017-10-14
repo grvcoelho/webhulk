@@ -1,4 +1,4 @@
-package logger
+package middleware
 
 import (
 	"strconv"
@@ -31,7 +31,7 @@ func (r *Logger) Handler(ctx iris.Context) {
 	}).Info("Request finished")
 }
 
-func New() func(iris.Context) {
+func NewLogger() func(iris.Context) {
 	l := &Logger{}
 
 	return l.Handler
