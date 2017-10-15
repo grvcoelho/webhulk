@@ -3,8 +3,8 @@ package main
 import (
 	iris "gopkg.in/kataras/iris.v8"
 
-	cfg "github.com/grvcoelho/caphook/config"
-	mdl "github.com/grvcoelho/caphook/middleware"
+	cfg "github.com/grvcoelho/caphook/pkg/config"
+	mdl "github.com/grvcoelho/caphook/pkg/middleware"
 )
 
 type Server struct {
