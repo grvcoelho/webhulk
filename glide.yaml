@@ -1,4 +1,4 @@
-package: github.com/grvcoelho/caphook
+package: github.com/grvcoelho/webhulk
 import:
 - package: github.com/sirupsen/logrus
   version: v1.0.3
