@@ -1,4 +1,4 @@
-package main
+package server
 
 import (
 	iris "gopkg.in/kataras/iris.v8"
