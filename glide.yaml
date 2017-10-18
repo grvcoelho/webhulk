@@ -5,3 +5,4 @@ import:
 - package: gopkg.in/yaml.v2
 - package: gopkg.in/kataras/iris.v8
   version: v8.5.2
+- package: github.com/spf13/cobra

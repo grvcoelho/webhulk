@@ -1,5 +1,5 @@
-hash: 46a48c9fec5a7df3563966316d4f7e65a8f32a9a170dd7fef021eee5299247d8
-updated: 2017-10-13T20:55:48.270873808-03:00
+hash: 5521449d92ba81a56a0fd4a7e3d76290964e680cb16dbbdec20049c6821589b6
+updated: 2017-10-16T10:28:09.464818-02:00
 imports:
 - name: github.com/aymerick/raymond
   version: 72acac2207479d21dd45898c2a4264246c818148
@@ -17,6 +17,8 @@ imports:
   version: 7e5a8eef611ee84dd359503f3969f80df4c50723
 - name: github.com/flosch/pongo2
   version: 1f4be1efe3b3529b7e58861f75d70120a9567dc4
+- name: github.com/inconshreveable/mousetrap
+  version: 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
 - name: github.com/iris-contrib/formBinder
   version: ad9fb86c356f971f30319c40ddbdcf72129a2791
 - name: github.com/Joker/jade
@@ -28,7 +30,7 @@ imports:
 - name: github.com/kataras/golog
   version: 2ed680e7b1f34147164fa8073373e14fce02ac30
 - name: github.com/kataras/iris
-  version: eeea656b255fbafab40daa247bd991072566ab88
+  version: 0d1de4cc102b89df7f28041cf506d0f55efc2e2e
   subpackages:
   - cache
   - cache/cfg
@@ -81,6 +83,10 @@ imports:
   version: 5bf94b69c6b68ee1b541973bb8e1144db23a194b
 - name: github.com/sirupsen/logrus
   version: f006c2ac4710855cf0f916dd6b77acf6b048dc6e
+- name: github.com/spf13/cobra
+  version: 7b2c5ac9fc04fc5efafb60700713d4fa609b777b
+- name: github.com/spf13/pflag
+  version: a9789e855c7696159b7db0db7f440b449edf2b31
 - name: golang.org/x/crypto
   version: 9419663f5a44be8b34ca85f08abc5fe1be11f8a3
   subpackages:
@@ -88,17 +94,17 @@ imports:
   - acme/autocert
   - ssh/terminal
 - name: golang.org/x/net
-  version: a04bdaca5b32abe1c069418fb7088ae607de5bd0
+  version: f315505cf3349909cdf013ea56690da34e96a451
   subpackages:
   - html
   - html/atom
 - name: golang.org/x/sys
-  version: 686000749eaec0b8855b8eef5336cf63899fe51d
+  version: 9ccfe848b9db8435a24c424abbc07a921adf1df5
   subpackages:
   - unix
   - windows
 - name: gopkg.in/kataras/iris.v8
   version: eeea656b255fbafab40daa247bd991072566ab88
 - name: gopkg.in/yaml.v2
-  version: eb3733d160e74a9c7e442f435eb3bea458e1d19f
+  version: cd8b52f8269e0feb286dfeef29f8fe4d5b397e0b
 testImports: []
