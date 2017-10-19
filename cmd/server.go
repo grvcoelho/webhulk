@@ -9,8 +9,8 @@ import (
 )
 
 func init() {
-	WebhulkCmd.AddCommand(ServerCmd)
-	ServerCmd.Flags().StringP("config", "c", "", "The webhulk configuration file path")
+	Webhulk.AddCommand(Server)
+	Server.Flags().StringP("config", "c", "", "The webhulk configuration file path")
 }
 
 var Server = &cobra.Command{
@@ -51,12 +51,4 @@ func RunServer(config *cfg.Configuration) {
 	}
 
 	s.Start()
-}
-
-func defaultTo(defaultValue, value string) string {
-	if value == "" {
-		return defaultValue
-	}
-
-	return value
 }

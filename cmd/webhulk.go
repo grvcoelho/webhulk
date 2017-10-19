@@ -2,7 +2,7 @@ package cmd
 
 import "github.com/spf13/cobra"
 
-var WebhulkCmd = &cobra.Command{
+var Webhulk = &cobra.Command{
 	Use:   "webulk [command]",
 	Short: "Webulk - A lightweight API for managing webhooks",
 }
