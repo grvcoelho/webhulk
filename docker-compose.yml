@@ -9,9 +9,9 @@ services:
     volumes:
       - ./:/go/src/github.com/grvcoelho/webhulk
     depends_on:
-      - postgres
+      - database
 
-  postgres:
+  database:
     image: postgres:9.6-alpine
     ports:
       - 5432
