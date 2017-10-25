@@ -1,5 +1,5 @@
-hash: 5521449d92ba81a56a0fd4a7e3d76290964e680cb16dbbdec20049c6821589b6
-updated: 2017-10-16T10:28:09.464818-02:00
+hash: 4a4eefbb7349481661ad60960006272da0d9ca6b213454797fc0156a7bdee9f5
+updated: 2017-10-25T13:18:33.496766-02:00
 imports:
 - name: github.com/aymerick/raymond
   version: 72acac2207479d21dd45898c2a4264246c818148
@@ -14,23 +14,27 @@ imports:
   subpackages:
   - parser
 - name: github.com/fatih/structs
-  version: 7e5a8eef611ee84dd359503f3969f80df4c50723
+  version: f5faa72e73092639913f5833b75e1ac1d6bc7a63
 - name: github.com/flosch/pongo2
   version: 1f4be1efe3b3529b7e58861f75d70120a9567dc4
 - name: github.com/inconshreveable/mousetrap
   version: 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
 - name: github.com/iris-contrib/formBinder
   version: ad9fb86c356f971f30319c40ddbdcf72129a2791
+- name: github.com/jmoiron/sqlx
+  version: 3379e5993990b1f927fc8db926485e6f6becf2d2
+  subpackages:
+  - reflectx
 - name: github.com/Joker/jade
   version: 35b3f5bdbcc920cd31f4870536dbc63be8530541
 - name: github.com/json-iterator/go
-  version: 6240e1e7983a85228f7fd9c3e1b6932d46ec58e2
+  version: 7e3b7760242a65d1627e58ef428f1e2769caf85d
 - name: github.com/juju/errors
   version: c7d06af17c68cd34c835053720b21f6549d9b0ee
 - name: github.com/kataras/golog
   version: 2ed680e7b1f34147164fa8073373e14fce02ac30
 - name: github.com/kataras/iris
-  version: 0d1de4cc102b89df7f28041cf506d0f55efc2e2e
+  version: eeea656b255fbafab40daa247bd991072566ab88
   subpackages:
   - cache
   - cache/cfg
@@ -73,6 +77,8 @@ imports:
   - gzip
 - name: github.com/klauspost/cpuid
   version: ae7887de9fa5d2db4eaa8174a7eff2c1ac00f2da
+- name: github.com/lib/pq
+  version: b609790bd85edf8e9ab7e0f8912750a786177bcf
 - name: github.com/microcosm-cc/bluemonday
   version: 68fecaef60268522d2ac3f0123cec9d3bcab7b6e
 - name: github.com/russross/blackfriday
@@ -86,9 +92,11 @@ imports:
 - name: github.com/spf13/cobra
   version: 7b2c5ac9fc04fc5efafb60700713d4fa609b777b
 - name: github.com/spf13/pflag
-  version: a9789e855c7696159b7db0db7f440b449edf2b31
+  version: 97afa5e7ca8a08a383cb259e06636b5e2cc7897f
+- name: github.com/stretchr/testify
+  version: 69483b4bd14f5845b5a1e55bca19e954e827f1d0
 - name: golang.org/x/crypto
-  version: 9419663f5a44be8b34ca85f08abc5fe1be11f8a3
+  version: 2509b142fb2b797aa7587dad548f113b2c0f20ce
   subpackages:
   - acme
   - acme/autocert

@@ -6,3 +6,7 @@ import:
 - package: gopkg.in/kataras/iris.v8
   version: v8.5.2
 - package: github.com/spf13/cobra
+- package: github.com/lib/pq
+- package: github.com/jmoiron/sqlx
+- package: github.com/stretchr/testify
+  version: v1.1.4
