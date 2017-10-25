@@ -1,3 +1,6 @@
 server:
   listen_on: 0.0.0.0:8080
   health_check: /_health_check
+
+database:
+  address: postgres://postgres:postgres@database/webhulk?sslmode=disable

@@ -8,7 +8,8 @@ import (
 )
 
 type Configuration struct {
-	Server *Server
+	Database *Database
+	Server   *Server
 }
 
 func Load(path string) (*Configuration, error) {

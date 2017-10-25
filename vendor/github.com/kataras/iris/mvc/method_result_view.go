@@ -36,14 +36,9 @@ const dotB = byte('.')
 var DefaultViewExt = ".html"
 
 func ensureExt(s string) string {
-	if len(s) == 0 {
-		return "index" + DefaultViewExt
-	}
-
 	if strings.IndexByte(s, dotB) < 1 {
 		s += DefaultViewExt
 	}
-
 	return s
 }
 

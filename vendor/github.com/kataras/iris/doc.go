@@ -961,15 +961,10 @@ The example below is not intended to be used in production but it's a good showc
 
     // MoviesController is our /movies controller.
     type MoviesController struct {
-        // if you build with go1.8 you have to use the mvc package always,
-        // otherwise
-        // you can, optionally
-        // use the type alias `iris.C`,
-        // same for
-        // context.Context -> iris.Context,
-        // mvc.Result -> iris.Result,
-        // mvc.Response -> iris.Response,
-        // mvc.View -> iris.View
+        // mvc.C is just a lightweight lightweight alternative
+        // to the "mvc.Controller" controller type,
+        // use it when you don't need mvc.Controller's fields
+        // (you don't need those fields when you return values from the method functions).
         mvc.C
     }
 
@@ -1039,7 +1034,13 @@ different data because the view is simply handling how the data is being display
 If you're new to back-end web development read about the MVC architectural pattern first,
 a good start is that wikipedia article: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller.
 
-Follow the examples at: https://github.com/kataras/iris/tree/master/_examples/#mvc
+Follow the examples below,
+
+- Hello world: https://github.com/kataras/iris/blob/master/_examples/mvc/hello-world/main.go
+
+- Session Controller usage: https://github.com/kataras/iris/blob/master/_examples/mvc/session-controller/main.go
+
+- A simple but featured Controller with model and views: https://github.com/kataras/iris/tree/master/_examples/mvc/controller-with-model-and-view
 
 
 Parameterized Path
