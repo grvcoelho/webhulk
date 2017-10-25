@@ -4,8 +4,8 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	cfg "github.com/grvcoelho/webhulk/pkg/config"
-	"github.com/grvcoelho/webhulk/pkg/server"
+	cfg "github.com/grvcoelho/webhulk/config"
+	"github.com/grvcoelho/webhulk/server"
 )
 
 func init() {

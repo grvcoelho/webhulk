@@ -3,9 +3,9 @@ package server
 import (
 	iris "gopkg.in/kataras/iris.v8"
 
-	cfg "github.com/grvcoelho/webhulk/pkg/config"
-	hnd "github.com/grvcoelho/webhulk/pkg/handlers"
-	mdl "github.com/grvcoelho/webhulk/pkg/middleware"
+	cfg "github.com/grvcoelho/webhulk/config"
+	hnd "github.com/grvcoelho/webhulk/handlers"
+	mdl "github.com/grvcoelho/webhulk/middleware"
 )
 
 type Server struct {
