@@ -21,7 +21,7 @@ func (s *Server) initHealthHandler() {
 }
 
 func (s *Server) Start() {
-	s.app.Run(iris.Addr(s.conf.Server.ListenOn))
+	s.app.Run(iris.Addr(s.conf.Server.ListenOn), iris.WithoutVersionChecker)
 }
 
 func New(conf *cfg.Configuration) (*Server, error) {
