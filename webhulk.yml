@@ -4,3 +4,4 @@ server:
 
 database:
   address: postgres://postgres:postgres@database/webhulk?sslmode=disable
+  migrations: file://migrations

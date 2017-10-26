@@ -20,14 +20,12 @@ var Server = &cobra.Command{
 }
 
 func ParseServer(cmd *cobra.Command, args []string) {
-	flags := cmd.Flags()
-	configFlag := defaultTo("webhulk.yml", flags.Lookup("config").Value.String())
-
-	config, err := cfg.Load(configFlag)
+	configFile := getConfigFile(cmd)
+	config, err := cfg.Load(configFile)
 
 	if err != nil {
 		log.WithFields(log.Fields{
-			"path":  configFlag,
+			"path":  configFile,
 			"error": err,
 		}).Fatal("Failed reading configuration file")
 		return
