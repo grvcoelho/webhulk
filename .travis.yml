@@ -12,6 +12,7 @@ env:
   - GO_FILES=$(find . -iname '*.go' -type f | grep -v /vendor/)
 
 script:
+  - docker-compose run webhulk go run main.go migrate
   - docker-compose run webhulk go test -v ./...
   - test -z $(gofmt -s -l $GO_FILES)
   - go vet ./...

@@ -1,5 +1,5 @@
-hash: 43cff71aca6cedd3a2c7f1dafb59ecee51755ab56d156186594057c27e4fc589
-updated: 2017-10-26T08:18:34.165231894-02:00
+hash: c199534d95c27e71eb674c0ff822629f3838c0520e9c83ea4b5a247d087d7790
+updated: 2017-10-26T22:00:17.14512446-02:00
 imports:
 - name: github.com/aymerick/raymond
   version: 72acac2207479d21dd45898c2a4264246c818148
@@ -28,7 +28,7 @@ imports:
 - name: github.com/Joker/jade
   version: 35b3f5bdbcc920cd31f4870536dbc63be8530541
 - name: github.com/json-iterator/go
-  version: 7e3b7760242a65d1627e58ef428f1e2769caf85d
+  version: fbd210edfcc4a947bd86b68701590990ca3d6036
 - name: github.com/juju/errors
   version: c7d06af17c68cd34c835053720b21f6549d9b0ee
 - name: github.com/kataras/golog
@@ -83,6 +83,11 @@ imports:
   - oid
 - name: github.com/mattes/migrate
   version: 035c07716cd373d88456ec4d701402df52584cb4
+  subpackages:
+  - database
+  - database/postgres
+  - source
+  - source/file
 - name: github.com/microcosm-cc/bluemonday
   version: 68fecaef60268522d2ac3f0123cec9d3bcab7b6e
 - name: github.com/russross/blackfriday
@@ -108,17 +113,19 @@ imports:
   - acme/autocert
   - ssh/terminal
 - name: golang.org/x/net
-  version: 4b14673ba32bee7f5ac0f990a48f033919fd418b
+  version: 7b572d500b0702f1ea30a47083ce2e1e5c61edba
   subpackages:
   - html
   - html/atom
 - name: golang.org/x/sys
-  version: 3e3646d2c706c21b222a5dbcaa6db12b3e0cc765
+  version: 164713f0dfcec4e80be8b53e1f0811f5f0d84578
   subpackages:
   - unix
   - windows
 - name: gopkg.in/kataras/iris.v8
   version: eeea656b255fbafab40daa247bd991072566ab88
+- name: gopkg.in/lucsky/cuid.v1
+  version: ca80578116af5e9cad271306a1f072d6221d3020
 - name: gopkg.in/yaml.v2
   version: eb3733d160e74a9c7e442f435eb3bea458e1d19f
 testImports:
