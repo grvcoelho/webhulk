@@ -12,3 +12,5 @@ import:
   version: v1.1.4
 - package: github.com/mattes/migrate
   version: v3.0.1
+- package: gopkg.in/lucsky/cuid.v1
+  version: v1.0.1
