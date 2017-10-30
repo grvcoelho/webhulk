@@ -1,7 +1,5 @@
 package database
 
-import "time"
-
 type Webhook struct {
 	*Model
 	Name    string `db:"name"`
@@ -11,10 +9,7 @@ type Webhook struct {
 
 func NewWebhook(name, url string, enabled bool) (*Webhook, error) {
 	return &Webhook{
-		Model: &Model{
-			ID:        newIDWithPrefix("web"),
-			CreatedAt: time.Now(),
-		},
+		Model:   NewModel("web"),
 		Name:    name,
 		URL:     url,
 		Enabled: enabled,

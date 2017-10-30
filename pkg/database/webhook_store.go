@@ -24,9 +24,9 @@ func (s *WebhookStore) Store(w *Webhook) (*Webhook, error) {
 
 	query := `
 		INSERT INTO webhooks
-			(id, name, url, enabled, created_at)
+			(id, name, url, enabled, created_at, updated_at)
 		VALUES
-		(:id, :name, :url, :enabled, :created_at)
+			(:id, :name, :url, :enabled, :created_at, :updated_at)
 	`
 
 	_, err := s.db.NamedExec(query, w)
@@ -46,7 +46,7 @@ func (s *WebhookStore) Retrieve(id string) (*Webhook, bool) {
 
 	query := `
 		SELECT
-			id, name, url, enabled, created_at
+			id, name, url, enabled, created_at, updated_at
 		FROM webhooks
 		WHERE
 			id = $1

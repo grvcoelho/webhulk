@@ -21,7 +21,7 @@
 | --------- | ---- | ----------- |
 | `headers` | *JSON* | The HTTP headers that will be sent |
 | `payload` | *JSON* | The payload that will be sent |
-| `signatures` | *String* | An HMAC signature of the message |
+| `signature` | *String* | An HMAC signature of the message |
 
 ### Deliveries
 
