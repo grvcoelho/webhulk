@@ -1,8 +1,8 @@
 CREATE TABLE IF NOT EXISTS webhooks (
-  id VARCHAR(255) PRIMARY KEY,
-  name VARCHAR(255),
-  url VARCHAR(255) NOT NULL,
-  enabled BOOLEAN NOT NULL DEFAULT true,
-  created_at DATE NOT NULL,
-  updated_at DATE NOT NULL
+  id varchar(255) PRIMARY KEY,
+  name varchar(255),
+  url varchar(255) NOT NULL,
+  enabled boolean NOT NULL DEFAULT true,
+  created_at date NOT NULL,
+  updated_at date NOT NULL
 );
