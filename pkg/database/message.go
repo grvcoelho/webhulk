@@ -2,8 +2,9 @@ package database
 
 import (
 	"crypto/hmac"
-	"crypto/sha256"
+	"crypto/sha1"
 	"encoding/hex"
+	"encoding/json"
 )
 
 type Message struct {
@@ -15,22 +16,45 @@ type Message struct {
 }
 
 func NewMessage(webhookID string, payload []byte) (*Message, error) {
-	m := &Message{
-		Model:     NewModel("msg"),
-		Headers:   []byte("{}"),
-		Payload:   payload,
-		WebhookID: webhookID,
+	signature := CalculateSignature(payload, []byte("s3cr3t"))
+	headers, err := NewMessageHeaders(signature)
+
+	if err != nil {
+		return nil, err
 	}
 
-	m.Signature = m.CalculateSignature()
-
-	return m, nil
+	return &Message{
+		Model:     NewModel("msg"),
+		Signature: signature,
+		Headers:   headers,
+		Payload:   payload,
+		WebhookID: webhookID,
+	}, nil
 }
 
-func (m *Message) CalculateSignature() string {
-	key := []byte("s3cr3t")
-	h := hmac.New(sha256.New, key)
-	h.Write(m.Payload)
+func NewMessageHeaders(signature string) ([]byte, error) {
+	headers := struct {
+		ContentType   string `json:"Content-Type"`
+		UserAgent     string `json:"User-Agent"`
+		XHubSignature string `json:"X-Hub-Signature"`
+	}{
+		ContentType:   "application/json",
+		UserAgent:     "Webhulk/1.0",
+		XHubSignature: "sha1=" + signature,
+	}
+
+	encoded, err := json.Marshal(headers)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return encoded, nil
+}
+
+func CalculateSignature(payload, key []byte) string {
+	h := hmac.New(sha1.New, key)
+	h.Write(payload)
 
 	return hex.EncodeToString(h.Sum(nil))
 }
