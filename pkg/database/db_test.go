@@ -54,6 +54,9 @@ func TestDatabase(t *testing.T) {
 		m1, err := NewMessage(w1.ID, []byte(`{"event": "status_changed"}`))
 		assert.NoError(t, err)
 
+		signature := m1.CalculateSignature()
+		assert.Equal(t, signature, "65f6162e117c28a85d3b7c41135573017da8f0d8cd8fa9d2203259eceadd129b", "Should calculate the signature")
+
 		_, err = messageStore.Store(m1)
 		assert.NoError(t, err, "Should store a message")
 
