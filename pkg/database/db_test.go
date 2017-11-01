@@ -51,8 +51,20 @@ func TestDatabase(t *testing.T) {
 		w1, _ := NewWebhook("events", "https://receiver.com", true)
 		w1, _ = webhookStore.Store(w1)
 
-		m1, err := NewMessage(w1.ID, `{"event": "status_changed"}`)
+		m1, err := NewMessage(w1.ID, []byte(`{"event":"status_changed"}`))
 		assert.NoError(t, err)
+		assert.Equal(
+			t,
+			m1.Signature,
+			"9d0643093016024e36604c76a3e3b3fced14df54",
+			"Should calculate the signature",
+		)
+		assert.Equal(
+			t,
+			string(m1.Headers),
+			`{"Content-Type":"application/json","User-Agent":"Webhulk/1.0","X-Hub-Signature":"sha1=9d0643093016024e36604c76a3e3b3fced14df54"}`,
+			"Should build the headers",
+		)
 
 		_, err = messageStore.Store(m1)
 		assert.NoError(t, err, "Should store a message")
