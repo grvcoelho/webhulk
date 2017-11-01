@@ -51,7 +51,7 @@ func TestDatabase(t *testing.T) {
 		w1, _ := NewWebhook("events", "https://receiver.com", true)
 		w1, _ = webhookStore.Store(w1)
 
-		m1, err := NewMessage(w1.ID, `{"event": "status_changed"}`)
+		m1, err := NewMessage(w1.ID, []byte(`{"event": "status_changed"}`))
 		assert.NoError(t, err)
 
 		_, err = messageStore.Store(m1)

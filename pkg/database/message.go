@@ -8,11 +8,11 @@ type Message struct {
 	Payload   []byte `db:"payload"`
 }
 
-func NewMessage(webhookID, payload string) (*Message, error) {
+func NewMessage(webhookID string, payload []byte) (*Message, error) {
 	return &Message{
 		Model:     NewModel("msg"),
-		Headers:   []byte(payload),
-		Payload:   []byte(payload),
+		Headers:   []byte("{}"),
+		Payload:   payload,
 		WebhookID: webhookID,
 	}, nil
 }
