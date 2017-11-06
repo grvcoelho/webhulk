@@ -28,6 +28,5 @@
 | Attribute | Type | Description |
 | --------- | ---- | ----------- |
 | `status` | *String* | The status of the delivery. One of: `success`, `failed`, `processing` |
-| `latency` | *JSON* | The time between the delivery and the response from the client |
-| `response_status_code` | *String* | The HTTP status code the client respond with |
-| `response_headers` | *JSON* | The HTTP headers the client respond with |
+| `latency` | *Integer* | The time between the delivery and the response from the client |
+| `status_code` | *String* | The HTTP status code the client respond with |

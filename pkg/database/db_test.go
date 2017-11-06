@@ -73,4 +73,32 @@ func TestDatabase(t *testing.T) {
 		assert.True(t, ok)
 		assert.Equal(t, m1.ID, m2.ID)
 	})
+
+	t.Run("DeliveryStore", func(t *testing.T) {
+		db, _ := NewDatabase(&cfg.Database{
+			Address: "postgres://postgres:postgres@database/webhulk?sslmode=disable",
+		})
+
+		webhookStore, _ := NewWebhookStore(db)
+		messageStore, _ := NewMessageStore(db)
+		deliveryStore, err := NewDeliveryStore(db)
+		assert.NoError(t, err)
+
+		w1, _ := NewWebhook("events", "https://receiver.com", true)
+		w1, _ = webhookStore.Store(w1)
+
+		m1, _ := NewMessage(w1.ID, []byte(`{"event":"status_changed"}`))
+		m1, _ = messageStore.Store(m1)
+
+		d1, err := NewDelivery(m1.ID)
+		assert.NoError(t, err)
+		assert.Equal(t, d1.Status, "processing")
+
+		_, err = deliveryStore.Store(d1)
+		assert.NoError(t, err, "Should store a delivery")
+
+		d2, ok := deliveryStore.Retrieve(d1.ID)
+		assert.True(t, ok)
+		assert.Equal(t, d1.ID, d2.ID)
+	})
 }
