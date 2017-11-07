@@ -3,7 +3,7 @@ package database
 import (
 	"testing"
 
-	cfg "github.com/grvcoelho/webhulk/pkg/config"
+	cfg "github.com/grvcoelho/webhulk/config"
 	"github.com/stretchr/testify/assert"
 )
 
