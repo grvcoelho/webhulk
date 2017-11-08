@@ -5,7 +5,7 @@ import (
 	_ "github.com/lib/pq"
 	log "github.com/sirupsen/logrus"
 
-	cfg "github.com/grvcoelho/webhulk/pkg/config"
+	cfg "github.com/grvcoelho/webhulk/config"
 )
 
 func NewDatabase(conf *cfg.Database) (*sqlx.DB, error) {

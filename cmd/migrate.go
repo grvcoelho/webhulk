@@ -7,7 +7,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	cfg "github.com/grvcoelho/webhulk/pkg/config"
+	cfg "github.com/grvcoelho/webhulk/config"
 )
 
 func init() {
